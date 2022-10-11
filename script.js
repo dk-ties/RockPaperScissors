@@ -35,9 +35,3 @@ function round(getComputerChoice, getPlayerChoice) {
     return playerWin;
   }
 }
-/*    else if getComputerChoice is  paper and getPlayerChoice is not scissor
-        return computerWin
-    else if getComputerChoice is  scissor and getPlayerChoice is not rock
-        return computerWin
-    else 
-        return playerWin*/

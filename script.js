@@ -8,5 +8,15 @@ function getComputerChoice() {
   /*    Between Rock
             Paper
             Scissor */
-  console.log(choice);
+  /* console.log(choice); */
+  return choice;
 }
+
+function getPlayerChoice() {
+  let playerChoice = prompt("Choose a hand");
+  playerChoice = playerChoice.toLowerCase();
+
+  return playerChoice;
+}
+console.log(getComputerChoice());
+console.log(getPlayerChoice());

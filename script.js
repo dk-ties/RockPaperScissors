@@ -36,21 +36,24 @@ console.log(getPlayerChoice()); */
   }
 }
  */
-
-switch (getComputerChoice) {
-  case "rock":
-    if (getPlayerChoice != "rock" || getPlayerChoice != "paper") {
-      return computerWin;
-    }
-    break;
-  case "paper":
-    if (getPlayerChoice != "paper" || getPlayerChoice != "scissor") {
-      return computerWin;
-    }
-    break;
-  case "scissor":
-    if (getPlayerChoice != "scissor" || getPlayerChoice != "rock") {
-      return computerWin;
-    }
-    break;
+/* function round(getComputerChoice, getPlayerChoice) {
+  console.log("So far so good");
+} */
+function round(getPlayerChoice, getComputerChoice) {
+  switch (getComputerChoice()) {
+    case "rock":
+      if (getComputerChoice != "rock" || getComputerChoice != "paper") {
+        console.log(computerWin);
+      }
+      break;
+    case "paper":
+      if (getComputerChoice != "paper" || getComputerChoice != "scissor") {
+        console.log(computerWin);
+      }
+      break;
+    case "scissor":
+      if (getComputerChoice != "scissor" || getComputerChoice != "rock") {
+        console.log(computerWin);
+      }
+  }
 }

@@ -3,6 +3,8 @@ console.log("hello world");
 var getComputerChoiceArray = ["rock", "paper", "scissor"];
 let playerWin = "Hooray You win!";
 let computerWin = "DAMMMM The computer take this one";
+let computerChoice = getComputerChoice();
+let playerChoice = getPlayerChoice();
 
 function getComputerChoice() {
   let randomChoice = Math.floor(Math.random() * getComputerChoiceArray.length);
@@ -11,7 +13,6 @@ function getComputerChoice() {
             Paper
             Scissor */
   /* console.log(choice); */
-  console.log(choice);
   return choice;
 }
 
@@ -39,21 +40,31 @@ console.log(getPlayerChoice()); */
 /* function round(getComputerChoice, getPlayerChoice) {
   console.log("So far so good");
 } */
-function round(getPlayerChoice, getComputerChoice) {
-  switch (getComputerChoice()) {
+
+console.log(playerChoice);
+console.log(computerChoice);
+
+function round(computerChoice, playerChoice) {
+  switch (computerChoice) {
     case "rock":
-      if (getComputerChoice != "rock" || getComputerChoice != "paper") {
+      if ((playerChoice = "rock")) {
+        if ((playerChoice = "paper")) {
+          console.log(playerWin);
+          break;
+        }
         console.log(computerWin);
       }
       break;
-    case "paper":
-      if (getComputerChoice != "paper" || getComputerChoice != "scissor") {
+    /*     case "paper":
+      if (playerChoice != "paper" || playerChoice != "scissor") {
         console.log(computerWin);
       }
       break;
     case "scissor":
-      if (getComputerChoice != "scissor" || getComputerChoice != "rock") {
+      if (playerChoice != "scissor" || playerChoice != "rock") {
         console.log(computerWin);
-      }
+      } */
+    default:
+      console.log(playerWin);
   }
 }

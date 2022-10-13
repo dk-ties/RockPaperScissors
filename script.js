@@ -24,7 +24,7 @@ function getPlayerChoice() {
 /* console.log(getComputerChoice());
 console.log(getPlayerChoice()); */
 
-function round(getComputerChoice, getPlayerChoice) {
+/* function round(getComputerChoice, getPlayerChoice) {
   if (getComputerChoice === "rock" && getPlayerChoice != "paper") {
     return computerWin;
   } else if (getComputerChoice === "paper" && getPlayerChoice != "scissor") {
@@ -34,4 +34,23 @@ function round(getComputerChoice, getPlayerChoice) {
   } else {
     return playerWin;
   }
+}
+ */
+
+switch (getComputerChoice) {
+  case "rock":
+    if (getPlayerChoice != "rock" || getPlayerChoice != "paper") {
+      return computerWin;
+    }
+    break;
+  case "paper":
+    if (getPlayerChoice != "paper" || getPlayerChoice != "scissor") {
+      return computerWin;
+    }
+    break;
+  case "scissor":
+    if (getPlayerChoice != "scissor" || getPlayerChoice != "rock") {
+      return computerWin;
+    }
+    break;
 }

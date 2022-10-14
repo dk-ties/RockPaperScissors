@@ -5,6 +5,7 @@ let playerWin = "Hooray You win!";
 let computerWin = "DAMMMM The computer take this one";
 let playerScore;
 let computerScore;
+let tie;
 
 function getComputerChoice() {
   let randomChoice = Math.floor(Math.random() * getComputerChoiceArray.length);
@@ -23,20 +24,6 @@ function getPlayerChoice() {
   return playerChoice;
 }
 
-function game() {
-  playerScore = 0;
-  computerScore = 0;
-  for (let i = 0; i < 5; i++) {
-    if (round() === playerScore) {
-      playerScore = playerScore + 1;
-    } else {
-      computerScore = computerScore + 1;
-    }
-    console.log("Player have " + playerScore + " points!");
-    console.log("Computer have " + computerScore + " points!");
-  }
-}
-
 function round() {
   let computerChoice = getComputerChoice();
   let playerChoice = getPlayerChoice();
@@ -44,32 +31,40 @@ function round() {
   switch (computerChoice) {
     case "rock":
       if (playerChoice === "rock") {
-        console.log("TieTieTie");
+        /* console.log("TieTieTie"); */
+        return tie;
       } else if (playerChoice === "paper") {
-        console.log(playerWin);
+        /* console.log(playerWin); */
         return playerScore;
       } else {
-        console.log("Computer took Rock " + computerWin);
+        /*  console.log("Computer took Rock " + computerWin); */
+        return computerScore;
       }
       break;
 
     case "paper":
       if (playerChoice === "paper") {
-        console.log("TieTieTie");
+        /* console.log("TieTieTie"); */
+        return tie;
       } else if (playerChoice === "scissor") {
-        console.log(playerWin);
+        /* console.log(playerWin); */
+        return playerScore;
       } else {
-        console.log("Computer took paper " + computerWin);
+        /* console.log("Computer took paper " + computerWin); */
+        return computerScore;
       }
       break;
 
     case "scissor":
       if (playerChoice === "scissor") {
-        console.log("TieTieTie");
+        /* console.log("TieTieTie"); */
+        return tie;
       } else if (playerChoice === "rock") {
-        console.log(playerWin);
+        /* console.log(playerWin); */
+        return playerScore;
       } else {
-        console.log("Computer took scissor " + computerWin);
+        /* console.log("Computer took scissor " + computerWin); */
+        return computerScore;
       }
       break;
   }
@@ -81,9 +76,38 @@ let playerScore
 let computerScore
 set to 0 in start game
 each round increment either player/computer score
-
-
-
-
-
+*/
+function game() {
+  playerScore = 0;
+  computerScore = 0;
+  tie = 0;
+  for (let i = 0; i < 5; i++) {
+    if (round() === playerScore) {
+      playerScore = playerScore + 1;
+      console.log("Player win!");
+    } else if (round() === computerScore) {
+      computerScore = computerScore + 1;
+      console.log("Computer win!");
+    } else {
+      i = i - 1;
+      console.log("It was a tie!");
+    }
+    console.log("Player have " + playerScore + " points!");
+    console.log("Computer have " + computerScore + " points!");
+  }
+  if (playerScore > computerScore) {
+    console.log(
+      "The winner is player with " + playerScore + " over " + computerScore
+    );
+  } else {
+    console.log(
+      "The winner is computer with " + computerScore + " over " + playerScore
+    );
+  }
+}
+/* 
+find a winner
+if playerScore > computerScore
+  player is the winner
+  else computer is the winner
 */

@@ -17,6 +17,23 @@ function getComputerChoice() {
   return choice;
 }
 
+/* const playerScissor = document
+  .getElementById("sissor")
+  .addEventListener("click", function () {
+    this.alert("Scissor is pressed");
+  });
+/* let playerScissor = addEventListener("click", #scissor)
+let playerScissor = addEventListener("click", #scissor)
+ */
+
+const playerScissor = document
+  .getElementById(`scissor`)
+  .addEventListener("click", function () {
+    alert("Scissor selected!");
+  });
+
+function playerSelected() {}
+
 function getPlayerChoice() {
   let playerChoice = prompt("Choose a hand");
   playerChoice = playerChoice.toLowerCase();
@@ -82,6 +99,7 @@ function game() {
   computerScore = 0;
   tie = 0;
   for (let i = 0; i < 5; i++) {
+    console.log("Round " + i);
     if (round() === playerScore) {
       playerScore = playerScore + 1;
       console.log("Player win!");
@@ -89,8 +107,8 @@ function game() {
       computerScore = computerScore + 1;
       console.log("Computer win!");
     } else {
-      i = i - 1;
       console.log("It was a tie!");
+      i = i - 1;
     }
     console.log("Player have " + playerScore + " points!");
     console.log("Computer have " + computerScore + " points!");

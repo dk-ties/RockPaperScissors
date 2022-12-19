@@ -32,11 +32,22 @@ const playerScissor = document
     alert("Scissor selected!");
   });
 
+const playerPaper = document
+  .getElementById(`paper`)
+  .addEventListener("click", function () {
+    alert("Paper selected!");
+  });
+
+const playerRock = document
+  .getElementById(`rock`)
+  .addEventListener("click", function sendPlayerChoice() {
+    getPlayerChoice("rock");
+  });
+
 function playerSelected() {}
 
-function getPlayerChoice() {
-  let playerChoice = prompt("Choose a hand");
-  playerChoice = playerChoice.toLowerCase();
+function getPlayerChoice(playerChoice) {
+  //playerChoice = playerChoice.toLowerCase();
 
   return playerChoice;
 }

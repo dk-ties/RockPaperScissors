@@ -7,13 +7,24 @@ let playerScore;
 let computerScore;
 let tie;
 
+const scissorElement = document.getElementById("scissor");
+scissorElement.addEventListener("click", () => {
+  game("scissor");
+});
+
+const paperElement = document.getElementById("paper");
+paperElement.addEventListener("click", () => {
+  game("paper");
+});
+
+const rockElement = document.getElementById("rock");
+rockElement.addEventListener("click", () => {
+  game("rock");
+});
+
 function getComputerChoice() {
   let randomChoice = Math.floor(Math.random() * getComputerChoiceArray.length);
   let choice = getComputerChoiceArray[randomChoice];
-  /*    Between Rock
-            Paper
-            Scissor */
-  /* console.log(choice); */
   return choice;
 }
 
@@ -26,7 +37,7 @@ function getComputerChoice() {
 let playerScissor = addEventListener("click", #scissor)
  */
 
-const playerScissor = document
+/* const playerScissor = document
   .getElementById(`scissor`)
   .addEventListener("click", function () {
     alert("Scissor selected!");
@@ -36,25 +47,16 @@ const playerPaper = document
   .getElementById(`paper`)
   .addEventListener("click", function () {
     alert("Paper selected!");
-  });
+  }); */
+/* function getPlayerChoice() {
 
-const playerRock = document
-  .getElementById(`rock`)
-  .addEventListener("click", function sendPlayerChoice() {
-    getPlayerChoice("rock");
-  });
+  return getPlayerChoice
+} */
 
-function playerSelected() {}
-
-function getPlayerChoice(playerChoice) {
-  //playerChoice = playerChoice.toLowerCase();
-
-  return playerChoice;
-}
-
-function round() {
+function round(playerChoice) {
   let computerChoice = getComputerChoice();
-  let playerChoice = getPlayerChoice();
+  //let playerChoice; // = getPlayerChoice();
+  console.log(computerChoice);
 
   switch (computerChoice) {
     case "rock":
@@ -96,6 +98,7 @@ function round() {
       }
       break;
   }
+  console.log("one round has been made");
 }
 /* 
 return winner
@@ -105,16 +108,16 @@ let computerScore
 set to 0 in start game
 each round increment either player/computer score
 */
-function game() {
+function game(playerChoice) {
   playerScore = 0;
   computerScore = 0;
   tie = 0;
   for (let i = 0; i < 5; i++) {
     console.log("Round " + i);
-    if (round() === playerScore) {
+    if (round(playerChoice) === playerScore) {
       playerScore = playerScore + 1;
       console.log("Player win!");
-    } else if (round() === computerScore) {
+    } else if (round(playerChoice) === computerScore) {
       computerScore = computerScore + 1;
       console.log("Computer win!");
     } else {
